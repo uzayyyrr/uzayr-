@@ -1,0 +1,33 @@
+class Person {
+    String name;
+    int age;
+
+    // Constructor Overloading
+    Person() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    // finalize acts like a destructor
+    protected void finalize() {
+        System.out.println("Object is destroyed");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        Person p2 = new Person("Alice", 30);
+        p1.display();
+        p2.display();
+    }
+}
